@@ -11,5 +11,4 @@ package game.views;
  */
 public interface Validation {
     boolean validate(String input);
-    boolean validate(int input);
 }
