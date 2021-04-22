@@ -40,9 +40,9 @@ public class ActionView implements Validation {
         boolean is_valid = false;
 
         while (!is_valid) {
-            System.out.print("1: Answer");
+            System.out.print("1: Answer ");
             if (this.availableLifelines > 0) {
-                System.out.print("2: Use a lifeline");
+                System.out.print("2: Use a lifeline ");
             }
             System.out.println("3: QUIT");
             input = scanner.nextLine();
