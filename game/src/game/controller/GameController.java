@@ -112,7 +112,7 @@ public class GameController {
      * Ask player's action
      *
      * @param quiz
-     * @return
+     * @return player's acction
      */
     public int askAction(QuizInfo quiz) {
         ActionView actionView = new ActionView();

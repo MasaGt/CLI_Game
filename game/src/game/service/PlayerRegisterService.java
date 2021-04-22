@@ -5,8 +5,8 @@
  */
 package game.service;
 
-import game.Models.IUserDao;
-import game.Models.UserDao;
+import game.dao.IUserDao;
+import game.dao.UserDao;
 import game.entity.Player;
 
 /**

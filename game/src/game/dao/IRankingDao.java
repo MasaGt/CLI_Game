@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.Models;
+package game.dao;
 
-import game.entity.OptionDto;
+import game.entity.RankingDto;
 import java.util.List;
 
 /**
- * The Object for writing to and reading from a option file.
+ * The Object for writing to and reading from a ranking file.
  * @author Masaomi
  */
-public interface IOptionDao {
-    List<OptionDto> getById(int id);
+public interface IRankingDao {
+
+    List<RankingDto> getAll();
+    void register(List<RankingDto> ranking);
 }

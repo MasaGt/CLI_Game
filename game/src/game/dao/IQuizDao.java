@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.Models;
+package game.dao;
 
-import game.entity.RankingDto;
+import game.entity.QuizDto;
 import java.util.List;
 
 /**
- * The Object for writing to and reading from a ranking file.
+ * The Object for writing to and reading  from a quiz file.
  * @author Masaomi
  */
-public interface IRankingDao {
-
-    List<RankingDto> getAll();
-    void register(List<RankingDto> ranking);
+public interface IQuizDao {
+    
+    List<QuizDto> getByLevel(int level);
+    
 }

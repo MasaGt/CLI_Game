@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.Models;
+package game.dao;
 
-import game.entity.QuizDto;
+import game.entity.OptionDto;
 import game.util.Const;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,47 +17,41 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Data Acess Object for a quiz file.
+ * Data Acess Object for a option file.
  * @author Masaomi
  */
-public class QuizDao implements IQuizDao {
+public class OptionDao implements IOptionDao {
 
     private final String FILE_PATH;
 
-    public QuizDao() {
-        this.FILE_PATH = "./DataStore/quiz.txt";
+    public OptionDao() {
+        this.FILE_PATH = "./DataStore/option.txt";
     }
 
-    /**
-     * Read quizes by specified level
-     * @param level
-     * @return 
-     */
     @Override
-    public List<QuizDto> getByLevel(int level) {
-        BufferedReader br = null;
+    public List<OptionDto> getById(int id) {
 
-        List<QuizDto> quizes = new ArrayList<>();
+        BufferedReader br = null;
+        List<OptionDto> options = new ArrayList<>();
 
         try {
             File file = new File(FILE_PATH);
             br = new BufferedReader(new FileReader(file));
-
             String line = "";
+
             while ((line = br.readLine()) != null) {
                 String[] props = line.split(Const.DELIMITER);
 
-                if (level == Integer.parseInt(props[3])) {
-                    QuizDto quiz = new QuizDto();
-                    quiz.setId(Integer.parseInt(props[0]));
-                    quiz.setStatement(props[1]);
-                    quiz.setAnswer(Integer.parseInt(props[2]));
-                    quizes.add(quiz);
+                //get options whihc has the passed quiz_id
+                if (id == Integer.parseInt(props[0])) {
+                    OptionDto option = new OptionDto();
+                    option.setQuizId(Integer.parseInt(props[0]));
+                    option.setId(Integer.parseInt(props[1]));
+                    option.setStatement(props[2]);
+
+                    options.add(option);
                 }
             }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(QuizDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | NumberFormatException ex) {
             Logger.getLogger(QuizDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -66,12 +59,13 @@ public class QuizDao implements IQuizDao {
                 if (br != null) {
                     br.close();
                 }
+
             } catch (IOException ex) {
-                Logger.getLogger(QuizDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(OptionDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
-        return quizes;
+        return options;
     }
 
 }

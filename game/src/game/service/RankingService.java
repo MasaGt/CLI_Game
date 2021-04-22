@@ -5,8 +5,8 @@
  */
 package game.service;
 
-import game.Models.IRankingDao;
-import game.Models.RankingDao;
+import game.dao.IRankingDao;
+import game.dao.RankingDao;
 import game.entity.Player;
 import game.entity.RankingDto;
 import game.util.Const;

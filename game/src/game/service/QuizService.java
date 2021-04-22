@@ -5,10 +5,10 @@
  */
 package game.service;
 
-import game.Models.IOptionDao;
-import game.Models.IQuizDao;
-import game.Models.OptionDao;
-import game.Models.QuizDao;
+import game.dao.IOptionDao;
+import game.dao.IQuizDao;
+import game.dao.OptionDao;
+import game.dao.QuizDao;
 import game.entity.OptionDto;
 import game.entity.QuizDto;
 import game.entity.QuizInfo;
