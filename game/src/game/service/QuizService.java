@@ -12,6 +12,7 @@ import game.dao.QuizDao;
 import game.entity.OptionDto;
 import game.entity.QuizDto;
 import game.entity.QuizInfo;
+import game.util.Const;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -53,7 +54,8 @@ public class QuizService {
     }
     
     /**
-     * Return 3 shuffled quizes.
+     * Return shuffled quizes.
+     * Becasue the game has a limited cretain rounds, the game does not give all the quiz stored.
      * @param quizes
      * @return list of shuffled quizes
      */
@@ -61,7 +63,7 @@ public class QuizService {
         Collections.shuffle(quizes);
         List<QuizDto> shuffled = new ArrayList<>();
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Const.THE_NUMBER_OF_QUIZ_PER_LEVEL; i++) {
             shuffled.add(quizes.get(i));
         }
         

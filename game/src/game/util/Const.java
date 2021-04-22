@@ -16,4 +16,5 @@ public class Const {
     public static final int QUIT = 3;
     public static final String DELIMITER = ",";
     public static final int RANKING_RECORD_LIMIT = 10;
+    public static final int THE_NUMBER_OF_QUIZ_PER_LEVEL = FINAL_ROUND / Level.values().length;
 }
