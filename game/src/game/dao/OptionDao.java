@@ -43,10 +43,10 @@ public class OptionDao implements IOptionDao {
                 String[] props = line.split(Const.DELIMITER);
 
                 //get options whihc has the passed quiz_id
-                if (id == Integer.parseInt(props[0])) {
+                if (id == Integer.parseInt(props[0].trim())) {
                     OptionDto option = new OptionDto();
-                    option.setQuizId(Integer.parseInt(props[0]));
-                    option.setId(Integer.parseInt(props[1]));
+                    option.setQuizId(Integer.parseInt(props[0].trim()));
+                    option.setId(Integer.parseInt(props[1].trim()));
                     option.setStatement(props[2]);
 
                     options.add(option);

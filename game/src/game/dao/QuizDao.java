@@ -48,11 +48,11 @@ public class QuizDao implements IQuizDao {
             while ((line = br.readLine()) != null) {
                 String[] props = line.split(Const.DELIMITER);
 
-                if (level == Integer.parseInt(props[3])) {
+                if (level == Integer.parseInt(props[3].trim())) {
                     QuizDto quiz = new QuizDto();
-                    quiz.setId(Integer.parseInt(props[0]));
+                    quiz.setId(Integer.parseInt(props[0].trim()));
                     quiz.setStatement(props[1]);
-                    quiz.setAnswer(Integer.parseInt(props[2]));
+                    quiz.setAnswer(Integer.parseInt(props[2].trim()));
                     quizes.add(quiz);
                 }
             }
