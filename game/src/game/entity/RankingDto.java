@@ -6,12 +6,13 @@
 package game.entity;
 
 /**
- *
+ * Ranking data transfer object.
  * @author Masaomi
  */
 public class RankingDto {
     
     private int rank;
+    private int playerId;
     private String name;
     private int score;
 
@@ -55,6 +56,20 @@ public class RankingDto {
      */
     public void setScore(int score) {
         this.score = score;
+    }
+
+    /**
+     * @return the playerId
+     */
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    /**
+     * @param playerId the playerId to set
+     */
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
     
 }

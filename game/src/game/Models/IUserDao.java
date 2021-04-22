@@ -8,12 +8,13 @@ package game.Models;
 import game.entity.Player;
 
 /**
- *
+ * The Object for writing to and reading from a player file.
  * @author Masaomi
  */
 public interface IUserDao {
     
     void regiter(Player player);
     int getNewId();
+    Player getById(int id);
     
 }

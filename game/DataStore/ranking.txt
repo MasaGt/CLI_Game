@@ -1,4 +1,1 @@
-1,Sample1,100
-2,test2,1000000
-3,experiment3,10000
-4,sample4,300
+1,1,sample1,0

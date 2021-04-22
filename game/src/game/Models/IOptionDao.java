@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.views;
+package game.Models;
+
+import game.entity.OptionDto;
+import java.util.List;
 
 /**
- * The pbject for validating input
+ * The Object for writing to and reading from a option file.
  * @author Masaomi
  */
-public interface Validation {
-    boolean validate(String input);
+public interface IOptionDao {
+    List<OptionDto> getById(int id);
 }

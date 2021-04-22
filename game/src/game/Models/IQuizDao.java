@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.views;
+package game.Models;
+
+import game.entity.QuizDto;
+import java.util.List;
 
 /**
- * The pbject for validating input
+ * The Object for writing to and reading  from a quiz file.
  * @author Masaomi
  */
-public interface Validation {
-    boolean validate(String input);
+public interface IQuizDao {
+    
+    List<QuizDto> getByLevel(int level);
+    
 }

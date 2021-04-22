@@ -6,20 +6,38 @@
 package game.entity;
 
 /**
- *
+ * Super class of each lifeline.
  * @author Masaomi
  */
 public abstract class Lifeline {
     
     private boolean isAvailable;
-
-    public Lifeline() {
+    private String name;
+    
+    public Lifeline(String name) {
         this.isAvailable = true;
+        this.name = name;
     }
     
-    abstract public void execute();
+    abstract public void execute(QuizInfo quiz);
     
     public void disable () {
         this.isAvailable = false;
     }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return the isAvailable
+     */
+    public boolean getIsAvailable() {
+        return isAvailable;
+    }
+    
+    
 }

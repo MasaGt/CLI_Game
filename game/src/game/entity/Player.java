@@ -5,6 +5,7 @@
  */
 package game.entity;
 
+import game.util.Prize;
 import java.util.ArrayList;
 
 /**
@@ -21,10 +22,11 @@ public class Player {
     public Player(String name, int id) {
         this.name = name;
         this.id = id;
-        this.score = 0;
-        this.lifelines.add(new Audience());
-        this.lifelines.add(new Telephone());
-        this.lifelines.add(new FiftyFifty());
+        this.score = Prize.Stage0.getPrize();
+        this.lifelines = new ArrayList<>();
+        this.lifelines.add(new Audience("Audience"));
+        this.lifelines.add(new Telephone("Telephone"));
+        this.lifelines.add(new FiftyFifty("Fity-Fifty"));
     }
 
     /**
@@ -55,5 +57,11 @@ public class Player {
         return id;
     }
     
-    
+    /**
+     * 
+     * @param score 
+     */
+    public void setScore(int score) {
+        this.score = score;
+    }
 }

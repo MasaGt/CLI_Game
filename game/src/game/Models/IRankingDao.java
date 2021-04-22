@@ -9,10 +9,11 @@ import game.entity.RankingDto;
 import java.util.List;
 
 /**
- *
+ * The Object for writing to and reading from a ranking file.
  * @author Masaomi
  */
 public interface IRankingDao {
-    
+
     List<RankingDto> getAll();
+    void register(List<RankingDto> ranking);
 }
