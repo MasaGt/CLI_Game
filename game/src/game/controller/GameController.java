@@ -170,10 +170,12 @@ public class GameController {
     public void showResult() {
         ResultView resultView = new ResultView();
         resultView.showResult(isFinished, round);
+        
+        this.round++;
+        
         if (this.round > Const.FINAL_ROUND) {
             this.isFinished = true;
         }
-        this.round++;
     }
 
     /**
