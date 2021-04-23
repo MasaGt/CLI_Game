@@ -90,7 +90,7 @@ public class GameController {
 
         QuizView quizView = new QuizView();
 
-        if (!quizes.isEmpty() || this.isFinished) {
+        if (!quizes.isEmpty()) {
             for (int i = 0; i < quizes.size(); i++) {
                 if (!this.isFinished) {
                     int action;
@@ -145,9 +145,7 @@ public class GameController {
         int playerAnswer = answerView.askAnswer(quiz.getOption(), this.scanner);
 
         JudgeService judgeService = new JudgeService();
-        if (judgeService.judge(quiz.getQuiz().getAnswer(), playerAnswer, this.player, this.round)) {
-            this.round++;
-        } else {
+        if (!judgeService.judge(quiz.getQuiz().getAnswer(), playerAnswer, this.player, this.round)) {
             this.isFinished = true;
         }
         showResult();
@@ -172,6 +170,9 @@ public class GameController {
     public void showResult() {
         ResultView resultView = new ResultView();
         resultView.showResult(isFinished, round);
+        
+        this.round++;
+        
         if (this.round > Const.FINAL_ROUND) {
             this.isFinished = true;
         }
