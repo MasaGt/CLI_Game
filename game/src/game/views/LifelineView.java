@@ -40,7 +40,7 @@ public class LifelineView implements Validation{
             input = scanner.nextLine();
             is_valid = validate(input);
             if (!is_valid) {
-                System.out.println("Wrong inpput");
+                System.out.println("Wrong input");
             }
         }
         
