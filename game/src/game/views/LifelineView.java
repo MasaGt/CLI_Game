@@ -58,7 +58,13 @@ public class LifelineView implements Validation{
     public boolean validate(String input) {
         try {
             int intInput = Integer.parseInt(input);
-            return this.lifelines.get(intInput - 1).getIsAvailable();
+            
+            if (this.lifelines.size() < intInput) {
+                return false;
+            } else {
+                return this.lifelines.get(intInput - 1).getIsAvailable();
+            }
+            
         } catch (NumberFormatException ex) {
             return false;
         }
