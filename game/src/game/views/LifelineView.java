@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class LifelineView implements Validation{
     
-    private List<Lifeline> lifelines;
+    private List<Lifeline> lifelines; 
     
     /**
      * Ask which lifelne to use.
