@@ -242,6 +242,10 @@
 61/2/Eiffel Tower
 61/3/Mt Rushmore
 61/4/Tower of Pisa
+62/1/Basketball
+62/2/Wrestling
+62/3/Football
+62/4/Baseball
 63/1/Vatican City
 63/2/Malta
 63/3/Lesotho
@@ -502,6 +506,10 @@
 127/2/Elephant
 127/3/Giraffe
 127/4/Colossal Squid
+128/1/James McAvoy
+128/2/Daniel Craig
+128/3/Jamie Dornan
+128/4/Michael Sheen
 129/1/The Burrow
 129/2/The Fort
 129/3/The Windmill
